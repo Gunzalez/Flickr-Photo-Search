@@ -8,15 +8,20 @@
 </head>
 <body>
 
-<form id="frmFlickrSearch" name="frmFlickrSearch" action="#" method="post">
-	<label for="searchTerm">Enter search text here</label>
-    <input type="text" id="searchTerm" name="searchTerm" value="" placeholder="e.g. Mopeds">
-    <button>Search</button>
-</form>
-
-<div id="photoBoard">
-
+<div id="topBar">
+    <form id="frmFlickrSearch" name="frmFlickrSearch" action="#" method="post">
+        <label for="searchTerm">Find images</label>
+        <input type="text" id="searchTerm" name="searchTerm" value="" placeholder="e.g. Mopeds">
+        <button>Search</button>
+    </form>
+    <div id="pageNo"></div>
+    <div id="controls">
+        <a href="#" class="prev displayNone">Prev</a>
+        <a href="#" class="next displayNone">Next</a>
+    </div>
 </div>
+
+<div id="photoBoard"></div>
 
 </body>
 </html>
