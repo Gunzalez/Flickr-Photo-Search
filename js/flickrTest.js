@@ -108,10 +108,12 @@
 		});
 	}	
 	
-	$(document).ready(function(){		
-		var flickrSearch = new FlickrSearch({
+	$(document).ready(function(){
+				
+		flickrSearch = new FlickrSearch({
 			itemsPerPage: 25, 	// set items per page
 			maxItems: 125		// set total number of items to fetch
-		});		
+		});	
+			
 	});		
 }())
