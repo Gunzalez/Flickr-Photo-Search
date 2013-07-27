@@ -9,19 +9,27 @@
 <body>
 
 <div id="topBar">
+	<h1>Flickr Photo Search</h1>
     <form id="frmFlickrSearch" name="frmFlickrSearch" action="#" method="post">
-        <label for="searchTerm">Find images</label>
-        <input type="text" id="searchTerm" name="searchTerm" value="" placeholder="e.g. Mopeds">
-        <button>Search</button>
+        <label for="searchTerm" class="displayNone">Find images</label>
+        <input type="text" id="searchTerm" name="searchTerm" value="" placeholder="e.g. Mopeds" title="Enter search term">
+        <select id="itemsPerPage" name="itemsPerPage" title="Images per page">
+            <option value="10">10</option>
+            <option value="15">15</option>
+            <option value="20" selected="selected">20</option>
+            <option value="25">25</option>
+        </select>
+        <button class="submit">Search</button>
     </form>
-    <div id="pageNo"></div>
     <div id="controls">
-        <a href="#" class="prev displayNone">Prev</a>
-        <a href="#" class="next displayNone">Next</a>
+    	<div id="pageNo"></div>
+        <a href="#" class="prev disabled displayNone">Prev</a>
+        <a href="#" class="next disabled displayNone">Next</a>
     </div>
 </div>
 
 <div id="photoBoard"></div>
+<div id="pagination"></div>
 
 </body>
 </html>

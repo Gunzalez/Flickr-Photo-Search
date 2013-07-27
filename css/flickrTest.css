@@ -3,58 +3,104 @@
 body {
 	margin: 0;
 	padding: 0;
+	font-family: Tahoma, Geneva, sans-serif;
+	font-size:13px;
 }
 
 * { outline: none; }
-.displayNones { display: none; }
+.displayNone { display: none; }
+.cleft { clear: left; }
 
 #topBar {
 	width: 750px;
-	margin: 0 auto;
+	margin: 10px auto;
 	position: relative;
-	margin-top: 50px;
+	height: 110px;
+}
+
+h1 {
+	font-size: 32px;
+	margin: 0;
+	padding: 30px 0 10px 0;
+	font-weight: normal;
+	color: #333;
 }
 
 #controls {
-	position: absolute;
-	top: 0;
-	right: 0;
+	float: right;
+	padding-top: 9px;
 }
 
+#searchTerm {
+	padding: 4px 7px;
+	font-family: Tahoma, Geneva, sans-serif;
+	font-size: 14px;
+	border-radius: 3px;
+	border: 1px solid #bbb;
+}
 
+#itemsPerPage {
+	padding: 4px 6px;
+	border-radius: 3px;
+	border: 1px solid #bbb;
+	font-family: Tahoma, Geneva, sans-serif;
+	font-size: 14px;
+	margin-left: 5px;
+}
 
+#pagination {
+	width: 750px;
+	margin: 20px auto;
+	position: relative;
+	text-align: right;
+	clear: left;
+}
 
+#frmFlickrSearch {
+	float: left;
+}
 
+#pageNo {
+	float: left;
+	margin-right: 10px;
+	font-size: 16px;
+	color: #999;
+}
 
+#controls a, .submit, #pagination a {
+	background: #e3e3e3;
+	border: 1px solid #bbb;
+	border-radius: 3px;
+	-webkit-box-shadow: inset 0 0 1px 1px #f6f6f6;
+	box-shadow: inset 0 0 1px 1px #f6f6f6;
+	color: #333;
+	padding: 5px 10px;
+	text-align: center;
+	text-shadow: 0 1px 0 #fff;
+	margin-left: 5px;
+	text-decoration: none;
+	cursor: pointer;
+}	
 
+#controls a.disabled, #pagination a.selected {
+	background: #fff;
+	border: 1px solid #bbb;
+	color: #ccc;
+	cursor: default;
+}
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+#pagination a.selected {
+	background: #ccc;
+	border: 1px solid #999;
+	color: #111;
+	cursor: default;
+}	
 
 #photoBoard {
 	margin: 0 auto;
 	width: 750px;
 	position: relative;
 }
-
-
-
-
-
-
-
 
 #photoBoard img {
 	float: left;
