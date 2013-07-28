@@ -21,11 +21,12 @@
 		
 		var that = this;
 		this.methods = {		
-			// pull in image via ajax, fill array
+			// pull in data via ajax, fill up the array
 			fetch: function(){								
 				var form = that.props.html.find('form');
 				var string = form.find('.searchTerm').val();
-				var url = that.props.url + '&per_page=' + that.props.maxItems + '&tags=' + string + '&text=' + string; 				
+				var params = { 'per_page': that.props.maxItems, 'tags': string, 'text': string }				
+				var url = that.props.url + '&' + $.param(params);				
 				if($.trim(string).length > 0){
 					that.props.photoArray = [];
 					$.getJSON(url, function(data) {
@@ -38,7 +39,7 @@
 						if(count % that.props.itemsPerPage != 0){
 							that.props.pageCount = that.props.pageCount + 1
 						}
-						that.methods.displayPage(1);
+						that.methods.displayPage(1); // Display page one of results
 					});
 				}				
 			},
@@ -75,7 +76,7 @@
 				};			
 				
 				// adjust controls
-				that.props.html.find('.controls a').removeClass('displayNone').removeClass('disabled');
+				that.props.html.find('.controls a').removeClass('displayNone disabled');
 				if(page == 1){
 					that.props.html.find('.controls .prev').addClass('disabled');
 				};
