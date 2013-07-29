@@ -10,15 +10,15 @@
 <div id="flickrSearch">
     <div class="topBar">
         <h1>Flickr Photo Search</h1>
-        <form id="frmFlickrSearch" name="frmFlickrSearch" action="#" method="post">
+        <form id="frmFlickrSearch" name="frmFlickrSearch" class="frmFlickrSearch" action="#" method="post">
             <label for="searchTerm" class="displayNone">Find images</label>
             <input type="text" id="searchTerm" name="searchTerm" class="searchTerm" value="" placeholder="e.g. Mopeds" title="Enter search term">
             <button class="submit">Search</button>
         </form>
         <div class="controls displayNone">
             <div class="pageNo"><span class="total-images"></span> images | <span class="current-page"></span> of <span class="total-pages"></span></div>
-            <a href="#" class="prev disabled">Prev</a>
-            <a href="#" class="next disabled">Next</a>
+            <a href="#" class="prev disabled unset">Prev</a>
+            <a href="#" class="next disabled unset">Next</a>
         </div>
     </div>
     <div class="photoBoard"></div>

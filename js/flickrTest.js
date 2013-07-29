@@ -1,6 +1,7 @@
 
 (function(){	
-	FlickrSearch = function(options){				
+	FlickrSearch = function(options){
+					
 		this.props = {
 			url: 'http://api.flickr.com/services/rest/?method=flickr.photos.search&api_key=3adea58584c1edc262792b21cffffbcf&format=json&nojsoncallback=1',
 			photoArray: [],
@@ -20,7 +21,8 @@
 		}
 		
 		var that = this;
-		this.methods = {		
+		this.methods = {
+					
 			// pull in data via ajax, fill up the array
 			fetch: function(){	
 										
@@ -67,10 +69,12 @@
 		
 							// set previous and next controls events
 							var $controls = that.props.html.find('.controls');
-							$controls.find('a').on('click', function(e){
-								e.preventDefault()
+							$controls.find('a.unset').on('click', function(e){
+								e.preventDefault() 
 								that.methods.switchPage(this);
 							});
+							// stops multiple event calls
+							$controls.find('a.unset').removeClass('unset');
 							
 							// display controls
 							$controls.removeClass('displayNone');
@@ -97,7 +101,8 @@
 				// set start and end points of the loop				
 				var upperBound = that.props.itemsPerPage * page;
 				var lowerBound = upperBound - that.props.itemsPerPage;
-														
+				
+				// loop through and add images to page								
 				for(var i=lowerBound; i<upperBound; i++){
 					if(that.props.photoArray[i] != undefined){
 						photoBoard.append($('<img src="'+that.props.photoArray[i]+'" width="150" height="150" />'));
@@ -125,7 +130,7 @@
 				}				
 			},
 			
-			switchPage: function($link){	 			
+			switchPage: function($link){				
 				if(!$($link).hasClass('disabled')){
 					if($($link).hasClass('prev')){
 						that.methods.displayPage(parseInt(that.props.currentPage) - 1);
@@ -133,7 +138,8 @@
 						that.methods.displayPage(parseInt(that.props.currentPage) + 1);
 					}
 				}
-			}			
+			}
+						
 		};		
 		
 		// assign fetching event

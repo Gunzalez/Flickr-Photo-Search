@@ -8,17 +8,19 @@ body {
 }
 
 * { outline: none; }
-.displayNone { display: none; }
-.cleft { clear: left; }
 
-.topBar {
+
+#flickrSearch .displayNone { display: none; }
+#flickrSearch .cleft { clear: left; }
+
+#flickrSearch .topBar {
 	width: 750px;
 	margin: 10px auto;
 	position: relative;
 	height: 110px;
 }
 
-h1 {
+#flickrSearch h1 {
 	font-size: 32px;
 	margin: 0;
 	padding: 30px 0 10px 0;
@@ -26,12 +28,12 @@ h1 {
 	color: #333;
 }
 
-.controls {
+#flickrSearch .controls {
 	float: right;
 	padding-top: 9px;
 }
 
-#searchTerm {
+#flickrSearch #searchTerm {
 	padding: 4px 7px;
 	font-family: Tahoma, Geneva, sans-serif;
 	font-size: 14px;
@@ -39,7 +41,7 @@ h1 {
 	border: 1px solid #bbb;
 }
 
-#itemsPerPage {
+#flickrSearch #itemsPerPage {
 	padding: 4px 6px;
 	border-radius: 3px;
 	border: 1px solid #bbb;
@@ -48,7 +50,7 @@ h1 {
 	margin-left: 5px;
 }
 
-.pagination {
+#flickrSearch .pagination {
 	width: 750px;
 	margin: 20px auto;
 	position: relative;
@@ -56,18 +58,24 @@ h1 {
 	clear: left;
 }
 
-#frmFlickrSearch {
+#flickrSearch .frmFlickrSearch {
 	float: left;
 }
 
-.pageNo {
+#flickrSearch .pageNo {
 	float: left;
 	margin-right: 15px;
 	font-size: 14px;
 	color: #999;
 }
 
-.controls a, .submit, .pagination a {
+#flickrSearch .pageNo span {
+	color: #666;
+}
+
+#flickrSearch .controls a, 
+#flickrSearch .submit, 
+#flickrSearch .pagination a {
 	background: #e3e3e3;
 	border: 1px solid #bbb;
 	border-radius: 3px;
@@ -82,26 +90,27 @@ h1 {
 	cursor: pointer;
 }	
 
-.controls a.disabled, .pagination a.selected {
+#flickrSearch .controls a.disabled, 
+#flickrSearch .pagination a.selected {
 	background: #fff;
 	border: 1px solid #bbb;
 	color: #ccc;
 	cursor: default;
 }
 
-.pagination a.selected {
+#flickrSearch .pagination a.selected {
 	background: #c4c4c4;
 	border: 1px solid #111;
 	color: #000;
 	cursor: default;
 }	
 
-.photoBoard {
+#flickrSearch .photoBoard {
 	margin: 0 auto;
 	width: 750px;
 	position: relative;
 }
 
-.photoBoard img {
+#flickrSearch .photoBoard img {
 	float: left;
 }
