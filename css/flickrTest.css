@@ -110,6 +110,12 @@ body {
 	position: relative;
 }
 
+#flickrSearch .error {
+	padding-left: 10px 0;
+	color: red;
+	font-size: 15px;
+}
+
 #flickrSearch .photoBoard img {
 	float: left;
 }

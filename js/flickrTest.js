@@ -19,7 +19,7 @@
 					return $('<div class="cleft"></div>');
 				},
 				errorHandler: function(){
-					return $('<div class="error">There are no images to display</div>');	
+					return $('<div class="error">Sorry, there are no photos to display for that search term.</div>');	
 				}
 			}				
 		}
