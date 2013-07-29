@@ -1,5 +1,6 @@
 
-(function(){	
+(function(){
+
 	FlickrSearch = function(options){
 					
 		this.props = {
@@ -86,23 +87,21 @@
 												
 					});
 				}
-								
+
 			},
 			
 			displayPage: function(page){
 								
 				// set current page
-				that.props.currentPage = page;
-				
-				// display images for this page				
-				var photoBoard = that.props.html.find('.photoBoard');	
-				photoBoard.empty();				
+				that.props.currentPage = page;			
+				var photoBoard = that.props.html.find('.photoBoard');
 				
 				// set start and end points of the loop				
 				var upperBound = that.props.itemsPerPage * page;
 				var lowerBound = upperBound - that.props.itemsPerPage;
 				
-				// loop through and add images to page								
+				// clear board, then loop through and add images to page					
+				photoBoard.empty();								
 				for(var i=lowerBound; i<upperBound; i++){
 					if(that.props.photoArray[i] != undefined){
 						photoBoard.append($('<img src="'+that.props.photoArray[i]+'" width="150" height="150" />'));
@@ -127,7 +126,8 @@
 				}
 				if(parseInt(page) === parseInt(that.props.pageCount)){
 					$controls.find('.next').addClass('disabled');
-				}				
+				}
+
 			},
 			
 			switchPage: function($link){				
@@ -147,6 +147,7 @@
 			that.methods.fetch();
 			return false;
 		});
+
 	}	
 	
 	$(document).ready(function(){
