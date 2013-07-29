@@ -16,9 +16,12 @@
 		this.utils = {
 			html: {
 				clearfloat: function(){
-					return $clearFloat = $('<div class="cleft"></div>');
+					return $('<div class="cleft"></div>');
+				},
+				errorHandler: function(){
+					return $('<div class="error">There are no images to display</div>');	
 				}
-			}	
+			}				
 		}
 		
 		var that = this;
@@ -36,6 +39,11 @@
 								
 					that.props.photoArray = [];
 					$.getJSON(url, function(data) {
+
+						// check returned json
+						if(typeof data === 'undefined'){
+							that.props.html.find('.photoBoard').html(that.utils.html.errorHandler());
+						}
 						
 						$.each(data.photos.photo, function(key, val) {
 							var imgSrc = 'http://farm'+ val.farm +'.static.flickr.com/'+ val.server +'/'+ val.id +'_'+ val.secret +'_q.jpg';
@@ -46,6 +54,11 @@
 						that.props.pageCount = parseInt(count / that.props.itemsPerPage);
 						if(count % that.props.itemsPerPage != 0){
 							that.props.pageCount = that.props.pageCount + 1
+						}
+
+						// check length of returned images
+						if(count < 1){
+							that.props.html.find('.photoBoard').html(that.utils.html.errorHandler());
 						}
 								
 						if(that.props.pageCount > 0){
