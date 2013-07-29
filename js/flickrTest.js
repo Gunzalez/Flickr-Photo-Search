@@ -132,7 +132,7 @@
 				$pagination.find('a:eq('+(page-1)+')').addClass('selected');
 								
 				// adjust controls
-				var $controls = that.props.html.find('.controls') 
+				var $controls = that.props.html.find('.controls');
 				$controls.find('a').removeClass('disabled');
 				if(parseInt(page) === 1){
 					$controls.find('.prev').addClass('disabled');
